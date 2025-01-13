@@ -17,9 +17,8 @@ The dataset used in this project is from Kaggle's [HR Analytics: Employee Attrit
 hr-analytics/
 ├── README.md
 ├── sql/
-│   ├── 01_create_tables.sql
-│   ├── 02_data_cleaning.sql
-│   └── 03_analysis_queries.sql
+│   ├── 01_data_cleaning.sql
+│   └── 02_analysis_queries.sql
 └── data/
     └── hr_analytics.csv
 ```
