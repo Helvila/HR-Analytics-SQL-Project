@@ -1,4 +1,42 @@
 # HR Analytics SQL Project
+
+## Overview
+This project analyzes HR data to uncover insights about employee attrition, satisfaction, and performance. Using SQL, I performed data cleaning, transformation, and analysis on an HR dataset to identify patterns and trends that could help with employee retention and workplace optimization.
+
+## Dataset
+The dataset used in this project is from Kaggle's [HR Analytics: Employee Attrition & Performance](https://www.kaggle.com/datasets/rishikeshkonapure/hr-analytics-prediction) dataset. It contains various employee metrics including:
+- Employee demographics
+- Job-related information
+- Performance metrics
+- Satisfaction levels
+- Work-life balance indicators
+- Compensation details
+
+## Project Structure
+```
+hr-analytics/
+├── README.md
+├── sql/
+│   ├── 01_create_tables.sql
+│   ├── 02_data_cleaning.sql
+│   └── 03_analysis_queries.sql
+└── data/
+    └── hr_analytics.csv
+```
+
+## Analysis Areas
+1. **Attrition Analysis**
+   - Department-wise attrition rates
+   - Factors influencing employee turnover
+   - Risk assessment metrics
+
+2. **Compensation Analysis**
+   - Salary distribution by job role
+   - Gender pay analysis
+   - Overtime impact on compensation
+
+3. **Employee Satisfaction**
+   - Work-life balance metrics
    - Job satisfaction trends
    - Environmental satisfaction impact
 
@@ -33,7 +71,7 @@ SELECT
     SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) as Attritions,
     ROUND(SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) 
     as AttritionRate
-FROM `hr-employee-attrition`
+FROM hr_analytics
 GROUP BY Department
 ORDER BY AttritionRate DESC;
 ```
